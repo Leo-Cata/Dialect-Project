@@ -1,4 +1,5 @@
 import About from './components/About';
+import Cards from './components/Cards';
 import Hero from './components/Hero';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Hero />
       <About />
+      <Cards />
     </>
   );
 }
