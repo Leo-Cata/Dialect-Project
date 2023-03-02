@@ -19,7 +19,7 @@ const PremiumAbout = () => {
         </button>
       </div>
       {/* image */}
-      <img src={person2} alt="" />
+      <img src={person2} alt="person reading illustration" />
     </div>
   );
 };

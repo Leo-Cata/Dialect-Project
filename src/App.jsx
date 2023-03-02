@@ -1,5 +1,6 @@
 import About from './components/About';
 import Cards from './components/Cards';
+import CountBanner from './components/CountBanner';
 import Hero from './components/Hero';
 import PremiumAbout from './components/PremiumAbout';
 
@@ -10,6 +11,7 @@ function App() {
       <About />
       <Cards />
       <PremiumAbout />
+      <CountBanner />
     </>
   );
 }

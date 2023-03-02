@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className="flex justify-around py-8 font-atkinson text-mainFont">
       {/* icon and name */}
       <div className="flex flex-row items-center text-2xl">
-        <img src={logo} alt="" />
+        <img src={logo} alt="dialect logo" />
         <p className="pl-1">Dialect</p>
       </div>
 

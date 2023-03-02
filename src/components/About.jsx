@@ -3,7 +3,7 @@ import { person1 } from '../assets';
 const About = () => {
   return (
     <div className="flex justify-center space-x-32 my-64">
-      <img src={person1} alt="" />
+      <img src={person1} alt="person reading illustration" />
       <div className="w-1/4 space-y-8">
         <div className="text-5xl space-x-3 font-bold">
           <span>The</span>

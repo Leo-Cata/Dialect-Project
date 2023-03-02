@@ -10,7 +10,11 @@ const Hero = () => {
       {/* big headinds, text and small buttons */}
       <div className="mt-16">
         <div className="flex justify-evenly">
-          <img src={world} alt="" className="self-start" />
+          <img
+            src={world}
+            alt="world globe illustration"
+            className="self-start"
+          />
           <div className="flex flex-col justify-center items-center font-bold text-7xl gap-[20px]">
             <div className="bg-white rounded-3xl px-[38px] py-4">
               dialect Brings
@@ -24,7 +28,11 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <img src={heartface} alt="" className="self-end" />
+          <img
+            src={heartface}
+            alt="heartface emoji illustration"
+            className="self-end"
+          />
         </div>
       </div>
       {/* big headinds*/}
