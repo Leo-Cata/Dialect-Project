@@ -16,7 +16,7 @@ const Hero = () => {
               dialect Brings
             </div>
             <div className="flex flex-row gap-[20px]">
-              <div className=" bg-[#FFFAA4] rounded-3xl px-[38px] py-4">
+              <div className=" bg-mainYellow rounded-3xl px-[38px] py-4">
                 languague
               </div>
               <div className=" bg-white rounded-3xl px-[38px] py-4">
@@ -42,7 +42,7 @@ const Hero = () => {
           <button className="bg-white rounded-md py-[15px] px-[55px]">
             Spanish
           </button>
-          <button className="bg-[#003D31] rounded-md py-[15px] px-[35px] text-white">
+          <button className="bg-mainFont rounded-md py-[15px] px-[35px] text-white">
             Start Learning
           </button>
         </div>

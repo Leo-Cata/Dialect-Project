@@ -9,6 +9,7 @@ import cardBook from './dialect_features_book.svg';
 import cardChat from './dialect_features_chat.svg';
 import cardClipboard from './dialect_features_clipboard.svg';
 import cardWatch from './dialect_features_watch.svg';
+import person2 from './dialect_person2.svg';
 
 export {
   logo,
@@ -22,4 +23,5 @@ export {
   cardChat,
   cardClipboard,
   cardWatch,
+  person2,
 };

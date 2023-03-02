@@ -1,6 +1,7 @@
 import About from './components/About';
 import Cards from './components/Cards';
 import Hero from './components/Hero';
+import PremiumAbout from './components/PremiumAbout';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Hero />
       <About />
       <Cards />
+      <PremiumAbout />
     </>
   );
 }
