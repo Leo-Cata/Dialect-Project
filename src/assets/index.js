@@ -12,7 +12,10 @@ import cardWatch from './dialect_features_watch.svg';
 import person2 from './dialect_person2.svg';
 import char1 from './dialect_union_a.png';
 import char2 from './dialect_union_char.png';
-
+import review1 from './dialect_review_person1.svg';
+import review2 from './dialect_review_person2.svg';
+import review3 from './dialect_review_person3.svg';
+import quotes from './dialect_union_quotes.svg';
 export {
   logo,
   background,
@@ -28,4 +31,8 @@ export {
   person2,
   char1,
   char2,
+  review1,
+  review2,
+  review3,
+  quotes,
 };
