@@ -11,3 +11,10 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+.carousel-items {
+  transition: transform 0.5s ease-in;
+}
+
+.carousel-items--scale-down {
+  transform: scale(95%);
+}

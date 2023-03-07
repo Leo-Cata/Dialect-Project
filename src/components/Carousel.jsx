@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { quotes, review1, review2, review3 } from '../assets';
 import { GoDash } from 'react-icons/go';
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
+import './styles.css';
+
 const people = [
   {
     id: 1,
@@ -30,7 +33,7 @@ const people = [
   },
   {
     id: 4,
-    img: review1,
+    img: review2,
 
     name: 'Emma Brown',
     title: 'Flight Attendant',
@@ -39,7 +42,7 @@ const people = [
   },
   {
     id: 5,
-    img: review2,
+    img: review3,
 
     name: 'Matthew Miller',
     title: 'Social Media Manager',
@@ -48,7 +51,7 @@ const people = [
   },
   {
     id: 6,
-    img: review3,
+    img: review1,
 
     name: 'Olivia Davis',
     title: 'Construction Worker',
@@ -56,21 +59,21 @@ const people = [
   },
   {
     id: 7,
-    img: review1,
+    img: review3,
     name: 'David Lee',
     title: 'Graphic Designer',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tristique, nisi vel facilisis commodo, sapien turpis vulputate magna, id commodo ex metus eu elit. Praesent ultrices dolor eu justo bibendum, eu lobortis eros vestibulum. ',
   },
   {
     id: 8,
-    img: review2,
+    img: review1,
     name: 'Sophia Chen',
     title: 'Marketing Manager',
     text: 'Fusce eu est nec libero blandit sollicitudin. Etiam condimentum, elit eu euismod dignissim, nulla felis lobortis lorem, in feugiat magna nunc nec est. Aenean a ante quis augue iaculis convallis non non quam. Duis imperdiet sagittis tristique. ',
   },
   {
     id: 9,
-    img: review3,
+    img: review2,
     name: 'Daniel Kim',
     title: 'Software Engineer',
     text: 'Suspendisse volutpat sapien nec odio blandit, sed molestie mauris faucibus. Suspendisse potenti. Duis semper, purus ac dignissim pretium, felis tortor venenatis nulla, vel pellentesque ipsum enim vel neque. In quis ex justo. ',
@@ -78,40 +81,71 @@ const people = [
 ];
 
 const Carousel = () => {
-  const [startIndex, setStartIndex] = useState(0);
+  // state to get and set indexes in the carousel
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // state used to set the transition class
+  const [TransitionClass, setTransitionClass] = useState('');
+
+  //when prev button is clicked
   const prevHandler = () => {
-    setStartIndex((prevIndex) =>
-      prevIndex === 0 ? people.length - 3 : prevIndex - 1,
-    );
+    //set transition class to element
+    setTransitionClass('carousel-items--scale-down');
+    //wait 200ms and
+    setTimeout(() => {
+      //set transition class to nothing
+      setTransitionClass('');
+      //set current index to elements before the last one if the prev index is 0 or just go back 3 elements
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? people.length - 3 : prevIndex - 3,
+      );
+    }, 200);
   };
 
+  //when next button is clicked
   const nextHandler = () => {
-    setStartIndex((prevIndex) =>
-      prevIndex === people.length - 3 ? 0 : prevIndex + 1,
-    );
+    //set transition class to element
+    setTransitionClass('carousel-items--scale-down');
+    //wait 200ms
+    setTimeout(() => {
+      //set transition class to nothing
+      setTransitionClass('');
+      //if prev index is 3 elements before the last one, set index to first one, if not add 3 to prev index
+      setCurrentIndex((prevIndex) =>
+        prevIndex === people.length - 3 ? 0 : prevIndex + 3,
+      );
+    }, 200);
   };
 
-  const goToPerson = (personIndex) => {
-    setStartIndex(personIndex);
-  };
-
+  //calculate number of pages equal the length of the array minus the number of items per page
   const itemsPerPage = 3;
   const numPages = Math.ceil(people.length / itemsPerPage);
 
+  //get the page of the pagination youre in, set current index equal to the start of the next page
+  //so if page 2-1=1*3=3, elements 4,5 and 6 will be rendered
   const handlePageClick = (page) => {
-    setStartIndex((page - 1) * itemsPerPage);
+    // set transition class
+    setTransitionClass('carousel-items--scale-down');
+    // after 200ms
+    setTimeout(() => {
+      // set class to non
+      setTransitionClass('');
+      setCurrentIndex((page - 1) * itemsPerPage);
+    }, 200);
   };
 
   return (
     <div>
-      <div className="w-full m-auto  relative group bg-secondaryYellow flex justify-between ">
-        <button onClick={prevHandler}>Prev</button>
-        <div className="flex justify-center space-x-8">
-          {people.slice(startIndex, startIndex + 3).map((person) => (
+      <div className="w-full m-auto relative group bg-secondaryYellow flex justify-between ">
+        <button onClick={prevHandler} className="">
+          <HiOutlineChevronLeft />
+        </button>
+        <div
+          className={`flex justify-center space-x-8 ${TransitionClass} carousel-items`}>
+          {people.slice(currentIndex, currentIndex + 3).map((person) => (
             <div key={person.name} className="w-1/5 bg-white rounded-xl">
-              <div className="flex flex-row">
-                <div className="flex py-10 px-5">
+              <div className="flex flex-row ">
+                <div className="flex py-10 px-5 ">
                   <img src={person.img} alt={person.name} />
                 </div>
                 <div className="flex flex-col justify-center">
@@ -131,16 +165,30 @@ const Carousel = () => {
             </div>
           ))}
         </div>
-        <button onClick={nextHandler}>Next</button>
+        <button onClick={nextHandler}>
+          {' '}
+          <HiOutlineChevronRight />
+        </button>
       </div>
       {/* pagination */}
-      <div className="flex justify-center text-2xl">
+      {/* center and 2xl text */}
+      <div className="flex justify-center text-2xl items-center">
+        {/* create a new array of length equals to the number of pages and map it to display "numPages" of dash icon */}
+        {/* if the current idex divided by the number of items per page is equal to the index of the current page, make it bigger, else give it an alpha  */}
         {[...Array(numPages)].map((_, i) => (
-          <div key={i} onClick={() => handlePageClick(i + 1)}>
+          <div
+            key={i}
+            onClick={() => handlePageClick(i + 1)}
+            className={
+              currentIndex / itemsPerPage === i
+                ? 'text-mainFont text-3xl '
+                : 'text-black/40'
+            }>
             <GoDash />
           </div>
         ))}
       </div>
+      {/* pagination ends */}
     </div>
   );
 };
