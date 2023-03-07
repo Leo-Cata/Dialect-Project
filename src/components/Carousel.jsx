@@ -135,10 +135,14 @@ const Carousel = () => {
 
   return (
     <div>
-      <div className="w-full m-auto relative group bg-secondaryYellow flex justify-between ">
-        <button onClick={prevHandler} className="">
-          <HiOutlineChevronLeft />
+      <div className="w-full m-auto relative group flex justify-between ">
+        <button className="flex items-center mx-2">
+          <HiOutlineChevronLeft
+            onClick={prevHandler}
+            className="cursor-pointer bg-black/20 rounded-full text-3xl"
+          />
         </button>
+
         <div
           className={`flex justify-center space-x-8 ${TransitionClass} carousel-items`}>
           {people.slice(currentIndex, currentIndex + 3).map((person) => (
@@ -164,11 +168,15 @@ const Carousel = () => {
             </div>
           ))}
         </div>
-        <button onClick={nextHandler}>
-          {' '}
-          <HiOutlineChevronRight />
-        </button>
+
+        <div className=" flex items-center mx-2">
+          <HiOutlineChevronRight
+            onClick={nextHandler}
+            className="cursor-pointer bg-black/20 rounded-full text-3xl"
+          />
+        </div>
       </div>
+
       {/* pagination */}
       {/* center and 2xl text */}
       <div className="flex justify-center text-2xl items-center">

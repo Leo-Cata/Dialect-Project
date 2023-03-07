@@ -1,5 +1,6 @@
 import React from 'react';
 import { background, world, heartface } from '../assets';
+import Buttons from './Buttons';
 import Navbar from './Navbar';
 
 const Hero = () => {
@@ -46,14 +47,7 @@ const Hero = () => {
             with a community of native speakers to help you master words faster.
           </p>
         </div>
-        <div className="flex justify-center mt-12 text-[18px] gap-3">
-          <button className="bg-white rounded-md py-[15px] px-[55px]">
-            Spanish
-          </button>
-          <button className="bg-mainFont rounded-md py-[15px] px-[35px] text-white">
-            Start Learning
-          </button>
-        </div>
+        <Buttons />
       </div>
     </div>
   );

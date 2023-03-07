@@ -1,9 +1,10 @@
 import About from './components/About';
 import Cards from './components/Cards';
-import Carousel from './components/Carousel';
 import CountBanner from './components/CountBanner';
+import CTA from './components/CTA';
 import Hero from './components/Hero';
 import PremiumAbout from './components/PremiumAbout';
+import Testimonials from './components/Testimonials';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Cards />
       <PremiumAbout />
       <CountBanner />
-      <Carousel />
+      <Testimonials />
+      <CTA />
     </>
   );
 }
