@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { quotes, review1, review2, review3 } from '../assets';
 import { GoDash } from 'react-icons/go';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-import './styles.css';
 
 const people = [
   {
