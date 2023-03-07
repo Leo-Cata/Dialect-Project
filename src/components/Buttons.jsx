@@ -2,7 +2,7 @@ import React from 'react';
 
 const Buttons = () => {
   return (
-    <div className="flex justify-center mt-12 text-[18px] gap-3">
+    <div className="mt-12 text-[18px] space-x-3">
       <button className="bg-white rounded-md py-[15px] px-[55px]">
         Spanish
       </button>

@@ -47,7 +47,9 @@ const Hero = () => {
             with a community of native speakers to help you master words faster.
           </p>
         </div>
-        <Buttons />
+        <div className="flex justify-center">
+          <Buttons />
+        </div>
       </div>
     </div>
   );
