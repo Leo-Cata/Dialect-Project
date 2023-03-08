@@ -16,6 +16,10 @@ import review1 from './dialect_review_person1.svg';
 import review2 from './dialect_review_person2.svg';
 import review3 from './dialect_review_person3.svg';
 import quotes from './dialect_union_quotes.svg';
+import facebook from './dialect_social_facebook.svg';
+import linkedin from './dialect_social_linkedin.svg';
+import twitter from './dialect_social_twitter.svg';
+
 export {
   logo,
   background,
@@ -35,4 +39,7 @@ export {
   review2,
   review3,
   quotes,
+  facebook,
+  linkedin,
+  twitter,
 };
