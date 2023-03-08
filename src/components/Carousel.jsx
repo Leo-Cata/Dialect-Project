@@ -189,9 +189,9 @@ const Carousel = () => {
             className={
               currentIndex / itemsPerPage === i
                 ? 'text-mainFont text-3xl '
-                : 'text-black/40'
+                : 'text-black/40 cursor-pointer'
             }>
-            <GoDash />
+            <GoDash className="" />
           </div>
         ))}
       </div>
