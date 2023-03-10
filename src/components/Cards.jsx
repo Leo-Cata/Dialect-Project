@@ -10,8 +10,8 @@ import {
 const Cards = () => {
   return (
     <div className="flex flex-col">
-      <div className="text-5xl space-x-4 w-1/3 text-center self-center font-bold">
-        <span className="text-mainCyan">Changing</span>
+      <div className="text-2xl xl:text-5xl w-11/12 lg:w-1/3 text-center self-center font-bold">
+        <span className="text-mainCyan">Changing</span>{' '}
         <span>the way people learn new languages</span>
       </div>
       {/* cards */}
