@@ -1,20 +1,7 @@
 import React, { useContext } from 'react';
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi';
 import { LanguagueContext } from '../context/LanguagueContext';
-
-const languagues = [
-  'English',
-  'French',
-  'Spanish',
-  'German',
-  'Russian',
-  'Italian',
-  'Portuguese',
-  'Turkish',
-  'Chinese',
-  'Arabic',
-  'Japanese',
-];
+import languagues from '../constants/languagues';
 
 const LanguaguesButton = () => {
   //get states and functions from the provider
@@ -22,7 +9,7 @@ const LanguaguesButton = () => {
     useContext(LanguagueContext);
 
   return (
-    <div className="relative flex flex-col items-center rounded-md bg-white w-[10rem]">
+    <div className="relative flex flex-col items-center rounded-md bg-white w-[11rem]">
       <button
         onClick={handleOpen}
         className="flex justify-around items-center p-4 w-full">
@@ -36,13 +23,13 @@ const LanguaguesButton = () => {
               <li
                 onClick={handleLangChosen}
                 value="2"
-                key={lang}
+                key={lang.name}
                 className={
                   langChosen === lang
                     ? 'py-2 bg-mainYellow rounded-md'
                     : 'py-2 hover:bg-mainYellow cursor-pointer rounded-md'
                 }>
-                {lang}
+                {lang.name} {lang.flag}
               </li>
             ))}
           </ul>

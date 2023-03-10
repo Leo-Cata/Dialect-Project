@@ -31,7 +31,7 @@ const Hero = () => {
           </div>
           <img
             src={heartface}
-            alt="heartface emoji illustration"
+            alt="heartface flag illustration"
             className="self-end"
           />
         </div>
