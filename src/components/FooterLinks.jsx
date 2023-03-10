@@ -12,7 +12,6 @@ const languagues = [
   'Arabic',
   'Japanese',
 ];
-
 const FooterLinks = () => {
   return (
     <div className="flex justify-evenly py-14">
@@ -31,7 +30,7 @@ const FooterLinks = () => {
         <h3 className="text-mainFont font-bold text-2xl pb-5">Learn More</h3>
         <ul className="text-lg text-secondaryFont space-y-3">
           {languagues.map((lang) => (
-            <li>Learn {lang}</li>
+            <li key={lang}>Learn {lang}</li>
           ))}
         </ul>
       </div>

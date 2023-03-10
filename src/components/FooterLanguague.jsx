@@ -8,7 +8,6 @@ const siteLanguages = [
   'Deutsch',
   'Русский',
   'Italiano',
-  'Français',
   '中文',
   'Čeština',
   'हिन्दी',
@@ -24,7 +23,9 @@ const FooterLanguague = () => {
         </h3>
         <ul className="flex text-lg text-secondaryFont space-x-5">
           {siteLanguages.map((siteLangs) => (
-            <li className="cursor-pointer">{siteLangs}</li>
+            <li className="cursor-pointer" key={siteLangs}>
+              {siteLangs}
+            </li>
           ))}
         </ul>
         <FooterSocials />
