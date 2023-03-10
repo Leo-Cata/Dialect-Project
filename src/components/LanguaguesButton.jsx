@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi';
+import { LanguagueContext } from '../context/LanguagueContext';
 
 const languagues = [
   'English',
@@ -16,27 +17,16 @@ const languagues = [
 ];
 
 const LanguaguesButton = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const [langChoosen, setLangChoosen] = useState('Languague');
-
-  const handleOpen = () => {
-    //set true/false to open drowpdown
-    setIsOpen((prev) => !prev);
-  };
-
-  const handleLangChoosen = (event) => {
-    //when lang is choosen in dropdown, close it and set lang in button
-    setIsOpen((prev) => !prev);
-    setLangChoosen(event.target.textContent);
-  };
+  //get states and functions from the provider
+  const { isOpen, langChosen, handleLangChosen, handleOpen } =
+    useContext(LanguagueContext);
 
   return (
     <div className="relative flex flex-col items-center rounded-md bg-white w-[10rem]">
       <button
         onClick={handleOpen}
         className="flex justify-around items-center p-4 w-full">
-        {langChoosen}
+        {langChosen}
         {isOpen ? <FiChevronUp /> : <FiChevronDown />}
       </button>
       {isOpen && (
@@ -44,11 +34,11 @@ const LanguaguesButton = () => {
           <ul className="absolute left-0 top-16 w-full text-center bg-secondaryYellow rounded-md border border-[#DAD0AF]">
             {languagues.map((lang) => (
               <li
-                onClick={handleLangChoosen}
+                onClick={handleLangChosen}
                 value="2"
                 key={lang}
                 className={
-                  langChoosen === lang
+                  langChosen === lang
                     ? 'py-2 bg-mainYellow rounded-md'
                     : 'py-2 hover:bg-mainYellow cursor-pointer rounded-md'
                 }>

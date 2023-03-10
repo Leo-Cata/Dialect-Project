@@ -7,19 +7,22 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import PremiumAbout from './components/PremiumAbout';
 import Testimonials from './components/Testimonials';
+import { LanguagueProvider } from './context/LanguagueContext';
 
 function App() {
   return (
-    <>
-      <Hero />
-      <About />
-      <Cards />
-      <PremiumAbout />
-      <CountBanner />
-      <Testimonials />
-      <CTA />
-      <Footer />
-    </>
+    <LanguagueProvider>
+      <>
+        <Hero />
+        <About />
+        <Cards />
+        <PremiumAbout />
+        <CountBanner />
+        <Testimonials />
+        <CTA />
+        <Footer />
+      </>
+    </LanguagueProvider>
   );
 }
 
