@@ -19,6 +19,7 @@ import quotes from './dialect_union_quotes.svg';
 import facebook from './dialect_social_facebook.svg';
 import linkedin from './dialect_social_linkedin.svg';
 import twitter from './dialect_social_twitter.svg';
+import charA from './char1.svg';
 
 export {
   logo,
@@ -42,4 +43,5 @@ export {
   facebook,
   linkedin,
   twitter,
+  charA,
 };
