@@ -21,7 +21,7 @@ const PremiumAbout = () => {
         </div>
       </div>
       {/* image */}
-      <div className="lg:max-0 mx-auto">
+      <div className="lg:max-0 mx-auto w-[90%] lg:w-auto">
         <img src={person2} alt="person reading illustration" />
       </div>
     </div>
