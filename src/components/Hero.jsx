@@ -1,5 +1,5 @@
 import React from 'react';
-import { char1, char2, world, heartface, charA } from '../assets';
+import { char1, char2, world, heartface } from '../assets';
 import Buttons from './Buttons';
 import Navbar from './Navbar';
 

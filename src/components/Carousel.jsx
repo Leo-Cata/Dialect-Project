@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { quotes, review1, review2, review3 } from '../assets';
 import { GoDash } from 'react-icons/go';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
@@ -80,13 +80,15 @@ const people = [
 ];
 
 const Carousel = () => {
+  //set slides to show to 1 if the windows is less than 1536p or 3 if bigger
+  const slidesToShow = window.innerWidth < 1536 ? 1 : 3;
+
   // state to get and set indexes in the carousel
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // state used to set the transition class
   const [TransitionClass, setTransitionClass] = useState('');
 
-  //when prev button is clicked
   const prevHandler = () => {
     //set transition class to element
     setTransitionClass('carousel-items--scale-down');
@@ -96,7 +98,9 @@ const Carousel = () => {
       setTransitionClass('');
       //set current index to elements before the last one if the prev index is 0 or just go back 3 elements
       setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? people.length - 3 : prevIndex - 3,
+        prevIndex === 0
+          ? people.length - slidesToShow
+          : prevIndex - slidesToShow,
       );
     }, 200);
   };
@@ -111,13 +115,15 @@ const Carousel = () => {
       setTransitionClass('');
       //if prev index is 3 elements before the last one, set index to first one, if not add 3 to prev index
       setCurrentIndex((prevIndex) =>
-        prevIndex === people.length - 3 ? 0 : prevIndex + 3,
+        prevIndex === people.length - slidesToShow
+          ? 0
+          : prevIndex + slidesToShow,
       );
     }, 200);
   };
 
   //calculate number of pages equal the length of the array minus the number of items per page
-  const itemsPerPage = 3;
+  const itemsPerPage = slidesToShow;
   const numPages = Math.ceil(people.length / itemsPerPage);
 
   //get the page of the pagination youre in, set current index equal to the start of the next page
@@ -135,7 +141,7 @@ const Carousel = () => {
 
   return (
     <div>
-      <div className="w-full m-auto relative group flex justify-between ">
+      <div className="w-full m-auto relative group flex justify-between">
         <button className="flex items-center mx-2">
           <HiOutlineChevronLeft
             onClick={prevHandler}
@@ -145,28 +151,38 @@ const Carousel = () => {
 
         <div
           className={`flex justify-center space-x-8 ${TransitionClass} carousel-items`}>
-          {people.slice(currentIndex, currentIndex + 3).map((person) => (
-            <div key={person.name} className="w-1/5 bg-white rounded-xl">
-              <div className="flex flex-row ">
-                <div className="flex py-10 px-5 ">
-                  <img src={person.img} alt={person.name} />
+          {people.map((person, index) => {
+            const slideIndex = index % 9;
+            if (
+              slideIndex >= currentIndex &&
+              slideIndex < currentIndex + slidesToShow
+            ) {
+              return (
+                <div
+                  key={person.name}
+                  className="w-4/5 2xl:w-1/5 bg-white rounded-xl">
+                  <div className="flex flex-row ">
+                    <div className="flex py-10 px-5 ">
+                      <img src={person.img} alt={person.name} />
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <h3 className="text-mainFont font-bold text-lg">
+                        {person.name}
+                      </h3>
+                      <p className="text-secondaryFont">{person.title}</p>
+                    </div>
+                  </div>
+                  <div className="px-5 pb-10">
+                    <p className="text-secondaryFont">{person.text}</p>
+                  </div>
+                  <div className="px-5 flex items-center space-x-1 pb-12">
+                    <img src={quotes} alt="" className="" />
+                    <div className="w-full h-[2px] bg-[#DEE5E4]"></div>
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center">
-                  <h3 className="text-mainFont font-bold text-lg">
-                    {person.name}
-                  </h3>
-                  <p className="text-secondaryFont">{person.title}</p>
-                </div>
-              </div>
-              <div className="px-5 pb-10">
-                <p className="text-secondaryFont">{person.text}</p>
-              </div>
-              <div className="px-5 flex items-center space-x-1 pb-12">
-                <img src={quotes} alt="" className="" />
-                <div className="w-full h-[2px] bg-[#DEE5E4]"></div>
-              </div>
-            </div>
-          ))}
+              );
+            }
+          })}
         </div>
 
         <div className=" flex items-center mx-2">
