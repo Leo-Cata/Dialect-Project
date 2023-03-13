@@ -6,6 +6,9 @@
 *{
   font-family: 'Atkinson Hyperlegible', 'sans-serif';
 }
+body{
+  overflow-x: hidden;
+}
 .hero{
   background-image: url(./assets/dialect_hero.png);
   width: 100%;
