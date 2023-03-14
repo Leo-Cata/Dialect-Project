@@ -3,6 +3,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes scaleDown{
+  0%{
+    transform: scaleY(0);
+  }
+  80%{
+    transform: scaleY(1.1);
+
+  }
+  100%{
+    transform: scaleY(1);
+  }
+}
 *{
   font-family: 'Atkinson Hyperlegible', 'sans-serif';
 }
@@ -22,6 +35,11 @@ body{
 
 .carousel-items--scale-down {
   transform: scale(95%);
+}
+
+.scaleDropdown{
+  animation: scaleDown .5s ease-in-out;
+  transform-origin: top;
 }
 
 @media (max-width: 768px) {
