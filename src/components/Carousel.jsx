@@ -160,12 +160,12 @@ const Carousel = () => {
               return (
                 <div
                   key={person.name}
-                  className="w-4/5 2xl:w-1/5 bg-white rounded-xl">
-                  <div className="flex flex-row ">
-                    <div className="flex py-10 px-5 ">
+                  className="w-11/12 2xl:w-1/5 bg-white rounded-xl">
+                  <div className="flex md:flex-row flex-col text-center md:text-left">
+                    <div className="flex py-2 md:py-10 md:px-5 justify-center md:justify-start">
                       <img src={person.img} alt={person.name} />
                     </div>
-                    <div className="flex flex-col justify-center">
+                    <div className="flex flex-col justify-center pb-5 md:pb-0">
                       <h3 className="text-mainFont font-bold text-lg">
                         {person.name}
                       </h3>
