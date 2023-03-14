@@ -3,8 +3,8 @@ import { facebook, linkedin, twitter } from '../assets';
 
 const FooterSocials = () => {
   return (
-    <div className="flex justify-between items-center mt-10">
-      <h3>Copyright @UIHUT 2022</h3>
+    <div className="flex justify-between items-center mt-10 flex-col-reverse md:flex-row">
+      <h3 className="py-4">Copyright @UIHUT 2022</h3>
       <div className="flex space-x-3">
         <img src={facebook} alt="facebook icon" className="cursor-pointer" />
         <img src={linkedin} alt="linkedin icon" className="cursor-pointer" />

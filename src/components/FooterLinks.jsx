@@ -3,11 +3,13 @@ import languagues from '../constants/languagues';
 
 const FooterLinks = () => {
   return (
-    <div className="flex justify-evenly py-14">
+    <div className="flex items-center md:justify-evenly py-14 flex-col md:flex-row text-center md:items-start md:text-left">
       {/* Dialect links */}
       <div>
-        <h3 className="text-mainFont font-bold text-2xl pb-5">Dialect</h3>
-        <ul className="text-lg text-secondaryFont space-y-3">
+        <h3 className="text-mainFont font-bold md:text-2xl py-5 text-lg">
+          Dialect
+        </h3>
+        <ul className="md:text-lg text-secondaryFont space-y-3">
           <li>About Us</li>
           <li>Careers</li>
           <li>Dialect Blog</li>
@@ -16,8 +18,10 @@ const FooterLinks = () => {
       </div>
       {/* Learn More Links */}
       <div>
-        <h3 className="text-mainFont font-bold text-2xl pb-5">Learn More</h3>
-        <ul className="text-lg text-secondaryFont space-y-3">
+        <h3 className="text-mainFont font-bold md:text-2xl py-5 text-lg">
+          Learn More
+        </h3>
+        <ul className="md:text-lg text-secondaryFont space-y-3">
           {languagues.map((lang) => (
             <li key={lang.name}>Learn {lang.name}</li>
           ))}
@@ -25,8 +29,10 @@ const FooterLinks = () => {
       </div>
       {/* Products links */}
       <div>
-        <h3 className="text-mainFont font-bold text-2xl pb-5">Products</h3>
-        <ul className="text-lg text-secondaryFont space-y-3">
+        <h3 className="text-mainFont font-bold md:text-2xl py-5 text-lg">
+          Products
+        </h3>
+        <ul className="md:text-lg text-secondaryFont space-y-3">
           <li>Dialect</li>
           <li>Dialect for Businesses</li>
           <li>Dialect Kids</li>
@@ -36,8 +42,10 @@ const FooterLinks = () => {
       </div>
       {/* Support Links */}
       <div>
-        <h3 className="text-mainFont font-bold text-2xl pb-5">Support</h3>
-        <ul className="text-lg text-secondaryFont space-y-3">
+        <h3 className="text-mainFont font-bold md:text-2xl py-5 text-lg">
+          Support
+        </h3>
+        <ul className="md:text-lg text-secondaryFont space-y-3">
           <li>Contact</li>
           <li>Privacy</li>
           <li>Terms</li>
