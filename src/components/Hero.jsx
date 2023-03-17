@@ -38,7 +38,7 @@ const Hero = () => {
         {/* big headinds*/}
 
         {/* text and button */}
-        <div className="text-center mt-7 pb-28">
+        <div className="text-center mt-7 sm:pb-28">
           <div className="flex justify-center">
             <p className="text-lg w-3/4 md:w-2/6">
               Learn a language right here with hundreds of free

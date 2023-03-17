@@ -9,12 +9,16 @@ const LanguaguesButton = () => {
     useContext(LanguagueContext);
   console.log(isOpen);
   return (
-    <div className="relative flex flex-col items-center rounded-md bg-white w-[11rem]">
+    <div className="relative flex flex-col items-center rounded-md bg-white px-4">
       <button
         onClick={handleOpen}
-        className="flex justify-around items-center p-4 w-full">
+        className="flex justify-around items-center py-4 w-full sm:w-44">
         {langChosen}
-        {isOpen ? <FiChevronUp /> : <FiChevronDown />}
+        {isOpen ? (
+          <FiChevronUp className="mx-1" />
+        ) : (
+          <FiChevronDown className="mx-1" />
+        )}
       </button>
 
       <div className={isOpen ? 'block' : 'hidden'}>
