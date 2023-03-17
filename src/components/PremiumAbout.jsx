@@ -14,10 +14,8 @@ const PremiumAbout = () => {
           language on Dialect is completely free, but you can remove ads and
           make faster progress with Plus. Try it free for 14 days!
         </p>
-        <div className="flex justify-center lg:block lg:justify-start">
-          <button className="bg-mainYellow text-xl px-9 py-4 text-mainFont rounded-md justify-self-center transition-all duration-200 hover:scale-105 hover:bg-yellow-200">
-            Start Learning
-          </button>
+        <div className="flex justify-center lg:block lg:justify-start bg-mainYellow text-xl px-9 py-4 text-mainFont rounded-md justify-self-center transition-all duration-200 hover:scale-105 hover:bg-yellow-200 w-fit">
+          <button className="">Start Learning</button>
         </div>
       </div>
       {/* image */}

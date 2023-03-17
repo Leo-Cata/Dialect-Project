@@ -31,12 +31,12 @@ const Navbar = () => {
 
       {/* log in */}
       <div className="gap-4 hidden md:flex">
-        <button className="border py-2 px-6 border-mainFont rounded-md transition-all hover:bg-mainYellow hover:border-mainYellow duration-200 hover:scale-105">
-          Log in
-        </button>
-        <button className="py-2 px-6 bg-mainFont rounded-md text-white transition-all hover:scale-105 duration-200">
-          Sign Up
-        </button>
+        <div className="hover:bg-mainYellow hover:border-mainYellow duration-200 hover:scale-105 rounded-md transition-all border-mainFont border py-2 px-6">
+          <button>Log in</button>
+        </div>
+        <div className="rounded-md transition-all hover:scale-105 duration-200 bg-mainFont py-2 px-6 text-white">
+          <button>Sign Up</button>
+        </div>
       </div>
 
       {/* mobile menu */}
