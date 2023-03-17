@@ -18,3 +18,4 @@ The live site is deployed on [Netlify](https://dialect-leomat.netlify.app/).
   * useState
 * Tailwind CSS
 * Figma
+* Vite
