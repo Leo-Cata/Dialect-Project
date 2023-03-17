@@ -7,23 +7,23 @@ const Navbar = () => {
   return (
     <div className="flex md:justify-around md:py-8 text-mainFont md:items-center">
       {/* icon and name */}
-      <div className="hidden md:flex flex-row items-center text-2xl cursor-pointer transition-all hover:scale-105 duration-200">
+      <div className="hidden md:flex flex-row items-center text-2xl cursor-pointer transition hover:scale-105 duration-200">
         <img src={logo} alt="dialect logo" />
         <p className="pl-1">Dialect</p>
       </div>
       {/* links */}
       <div className="hidden md:block">
         <ul className="flex space-x-5 [&_li]:cursor-pointer">
-          <li className="hover:text-black transition-all hover:scale-105 duration-100">
+          <li className="hover:text-black transition hover:scale-105 duration-100">
             How It Works
           </li>
-          <li className="hover:text-black transition-all hover:scale-105 duration-100">
+          <li className="hover:text-black transition hover:scale-105 duration-100">
             Reviews
           </li>
-          <li className="hover:text-black transition-all hover:scale-105 duration-100">
+          <li className="hover:text-black transition hover:scale-105 duration-100">
             Live Lesson
           </li>
-          <li className="hover:text-black transition-all hover:scale-105 duration-100">
+          <li className="hover:text-black transition hover:scale-105 duration-100">
             Pricing
           </li>
         </ul>
@@ -31,10 +31,10 @@ const Navbar = () => {
 
       {/* log in */}
       <div className="gap-4 hidden md:flex">
-        <button className="border py-2 px-6 border-mainFont rounded-md transition-all hover:bg-mainYellow hover:border-mainYellow duration-200 hover:scale-105">
+        <button className="border py-2 px-6 border-mainFont rounded-md transition hover:bg-mainYellow hover:border-mainYellow duration-200 hover:scale-105">
           Log in
         </button>
-        <button className="py-2 px-6 bg-mainFont rounded-md text-white transition-all hover:scale-105 duration-200">
+        <button className="py-2 px-6 bg-mainFont rounded-md text-white transition hover:scale-105 duration-200">
           Sign Up
         </button>
       </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
             className={`text-6xl self-end px-6 ${
               menuOpen
                 ? 'rotate-180 transition-transform ease-in-out duration-300'
-                : 'transition-all ease-out duration-300'
+                : 'transition ease-out duration-300'
             }`}>
             {menuOpen ? <BiX /> : <BiMenu />}
           </button>
