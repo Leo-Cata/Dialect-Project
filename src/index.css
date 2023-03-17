@@ -52,8 +52,3 @@ body{
     width: calc(100% / 1);
   }
 }
-
-.transition{
-  transition: all;
-  transition-duration: 200;
-}
