@@ -7,26 +7,34 @@ const Navbar = () => {
   return (
     <div className="flex md:justify-around md:py-8 text-mainFont md:items-center">
       {/* icon and name */}
-      <div className="hidden md:flex flex-row items-center text-2xl">
+      <div className="hidden md:flex flex-row items-center text-2xl cursor-pointer hover:scale-105 duration-200">
         <img src={logo} alt="dialect logo" />
         <p className="pl-1">Dialect</p>
       </div>
       {/* links */}
       <div className="hidden md:block">
-        <ul className="flex space-x-5">
-          <li>How It Works</li>
-          <li> Reviews</li>
-          <li>Live Lesson</li>
-          <li>Pricing</li>
+        <ul className="flex space-x-5 [&_li]:cursor-pointer">
+          <li className="hover:text-black hover:scale-105 duration-100">
+            How It Works
+          </li>
+          <li className="hover:text-black hover:scale-105 duration-100">
+            Reviews
+          </li>
+          <li className="hover:text-black hover:scale-105 duration-100">
+            Live Lesson
+          </li>
+          <li className="hover:text-black hover:scale-105 duration-100">
+            Pricing
+          </li>
         </ul>
       </div>
 
       {/* log in */}
       <div className="gap-4 hidden md:flex">
-        <button className="border py-2 px-6 border-mainFont rounded-md">
+        <button className="border py-2 px-6 border-mainFont rounded-md hover:bg-mainYellow hover:border-mainYellow duration-200 hover:scale-105">
           Log in
         </button>
-        <button className="py-2 px-6 bg-mainFont rounded-md text-white">
+        <button className="py-2 px-6 bg-mainFont rounded-md text-white hover:scale-105 duration-200">
           Sign Up
         </button>
       </div>
