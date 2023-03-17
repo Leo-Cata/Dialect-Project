@@ -9,7 +9,7 @@ const FooterLinks = () => {
         <h3 className="text-mainFont font-bold md:text-2xl py-5 text-lg">
           Dialect
         </h3>
-        <ul className="md:text-lg text-secondaryFont space-y-3">
+        <ul className="md:text-lg text-secondaryFont space-y-3 [&_li]:cursor-pointer">
           <li>About Us</li>
           <li>Careers</li>
           <li>Dialect Blog</li>
@@ -21,7 +21,7 @@ const FooterLinks = () => {
         <h3 className="text-mainFont font-bold md:text-2xl py-5 text-lg">
           Learn More
         </h3>
-        <ul className="md:text-lg text-secondaryFont space-y-3">
+        <ul className="md:text-lg text-secondaryFont space-y-3 [&_li]:cursor-pointer">
           {languagues.map((lang) => (
             <li key={lang.name}>Learn {lang.name}</li>
           ))}
@@ -32,7 +32,7 @@ const FooterLinks = () => {
         <h3 className="text-mainFont font-bold md:text-2xl py-5 text-lg">
           Products
         </h3>
-        <ul className="md:text-lg text-secondaryFont space-y-3">
+        <ul className="md:text-lg text-secondaryFont space-y-3 [&_li]:cursor-pointer">
           <li>Dialect</li>
           <li>Dialect for Businesses</li>
           <li>Dialect Kids</li>
@@ -45,7 +45,7 @@ const FooterLinks = () => {
         <h3 className="text-mainFont font-bold md:text-2xl py-5 text-lg">
           Support
         </h3>
-        <ul className="md:text-lg text-secondaryFont space-y-3">
+        <ul className="md:text-lg text-secondaryFont space-y-3 [&_li]:cursor-pointer">
           <li>Contact</li>
           <li>Privacy</li>
           <li>Terms</li>
