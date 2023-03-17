@@ -46,15 +46,15 @@ const Navbar = () => {
             <img src={logo} alt="dialect logo" />
             <p className="pl-1">Dialect</p>
           </div>
-          <button
+          <div
             onClick={() => setMenuOpen((prev) => !prev)}
-            className={`text-6xl self-end px-6 ${
+            className={`text-6xl self-end px-6 cursor-pointer ${
               menuOpen
                 ? 'rotate-180 transition-transform ease-in-out duration-300'
                 : 'transition ease-out duration-300'
             }`}>
             {menuOpen ? <BiX /> : <BiMenu />}
-          </button>
+          </div>
         </div>
         <div className={menuOpen ? 'block' : 'hidden'}>
           <div>
