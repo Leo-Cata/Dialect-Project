@@ -15,7 +15,7 @@ const PremiumAbout = () => {
           make faster progress with Plus. Try it free for 14 days!
         </p>
         <div className="flex justify-center lg:block lg:justify-start">
-          <button className="bg-mainYellow text-xl px-9 py-4 text-mainFont rounded-md justify-self-center">
+          <button className="bg-mainYellow text-xl px-9 py-4 text-mainFont rounded-md justify-self-center duration-200 hover:scale-105 hover:bg-yellow-200">
             Start Learning
           </button>
         </div>
