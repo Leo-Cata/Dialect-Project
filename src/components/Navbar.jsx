@@ -40,7 +40,7 @@ const Navbar = () => {
       </div>
 
       {/* mobile menu */}
-      <div className="bg-mainCyan w-full text-5xl flex flex-col border-b border-black/10 md:hidden">
+      <div className="bg-[#30DDBC] w-full text-5xl flex flex-col  rounded-b-[2.5rem] md:hidden shadow-md">
         <div className="flex justify-between">
           <div className="flex items-center  mx-4">
             <img src={logo} alt="dialect logo" />
@@ -48,32 +48,32 @@ const Navbar = () => {
           </div>
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="text-8xl self-end px-6">
+            className={`text-6xl self-end px-6 ${
+              menuOpen
+                ? 'rotate-180 transition-transform ease-in-out duration-300'
+                : 'transition-all ease-out duration-300'
+            }`}>
             {menuOpen ? <BiX /> : <BiMenu />}
           </button>
         </div>
-        {menuOpen ? (
-          <>
-            <div>
-              <ul className="text-center [&_li]:my-8 [&_li]:cursor-pointer">
-                <li>How It Works</li>
-                <li> Reviews</li>
-                <li>Live Lesson</li>
-                <li>Pricing</li>
-              </ul>
-            </div>
-            <div className="flex justify-center space-x-4 my-8">
-              <button className="border py-2 px-6 border-mainFont rounded-md">
-                Log in
-              </button>
-              <button className="py-2 px-6 bg-mainFont rounded-md text-white">
-                Sign Up
-              </button>
-            </div>
-          </>
-        ) : (
-          ''
-        )}
+        <div className={menuOpen ? 'block' : 'hidden'}>
+          <div>
+            <ul className="text-center [&_li]:my-8 [&_li]:cursor-pointer [&_li]:underline text-4xl">
+              <li>How It Works</li>
+              <li> Reviews</li>
+              <li>Live Lesson</li>
+              <li>Pricing</li>
+            </ul>
+          </div>
+          <div className="flex justify-center space-x-4 my-8 text-3xl">
+            <button className=" border py-2 px-6 border-mainFont rounded-md">
+              Log in
+            </button>
+            <button className="py-2 px-6 bg-mainFont rounded-md text-white">
+              Sign Up
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
